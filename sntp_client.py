@@ -28,7 +28,7 @@ def sntp_client(i):
       server_t2 = (data[10] - TIME1970) # server sent time
       
       # calculate RTT and offset
-      delay = (client_t3 - client_t0) - (server_t2 - server_t1)
+      delay = (server_t1 - client_t0) - (server_t2 - client_t3)
       offset = ((server_t1 - client_t0) + (server_t2 - client_t3)) / 2
 
       # calculate "smoothed offset"
